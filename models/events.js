@@ -19,6 +19,17 @@ class Event {
     static readDb() {
         const filePath = path.join(__dirname, '../database/db.json');
         const fileData = fs.readFileSync(filePath, 'utf-8');
-        return fileData;
+        return JSON.parse(fileData);
+    }
+
+    static addDb(item) {
+
+        const filePath = path.join(__dirname, '../database/db.json');
+
+        const events = this.readDb();
+        events.push(item);
+
+        fs.writeFileSync(filePath, JSON.stringify(events, null, 2), 'utf-8');
+
     }
 }
