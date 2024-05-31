@@ -100,6 +100,12 @@ class Event {
         if (!date || description.length < 8) throw new Error('Data non valida');
         this.date = date;
     }
+
+    // Setter della maxSeats
+    set maxSeats(maxSeats) {
+        if (!maxSeats || maxSeats < 5 || typeof maxSeats === 'number') throw new Error('Numero di posti non valido');
+        this.maxSeats = maxSeats;
+    }
 }
 
 module.exports = Event;
