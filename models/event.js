@@ -2,9 +2,10 @@ const path = require("path");
 const fs = require("fs");
 
 class Event {
+    #id
 
     constructor(title, description, date, maxSeats) {
-        this.id = this.generateId();
+        this.#id = this.generateId();
         this.title = title;
         this.description = description;
         this.date = date;
@@ -80,6 +81,12 @@ class Event {
         }, []);
 
         return reservationsEvents;
+    }
+
+    // Setter del title
+    set title(title) {
+        if (!title || title.length < 1 || typeof title !== 'string') throw new Error('Il titolo passato non può essere salvato');
+        this.title = title;
     }
 }
 
