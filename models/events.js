@@ -39,7 +39,9 @@ class Event {
     // Filtro per la ricerca tramite id
     static getEventId(id) {
         const events = this.readDb();
-        return events.find(event => event.id === id);
+        const eventId = events.find(event => event.id === id);
+        if (!eventId) throw new Error(`L\'evento con id: ${id} non esiste`);
+        return eventId;
     }
 
     // Filtro per la ricerca tramite titolo
@@ -50,6 +52,8 @@ class Event {
             event.title === title && arr.push(event);
             return arr;
         }, []);
+
+        if (eventsTitle.length < 1) throw new Error(`Non esistono eventi con nome: ${title}`);
 
         return eventsTitle;
     }
