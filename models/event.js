@@ -59,6 +59,28 @@ class Event {
 
         return eventsTitle;
     }
+
+    // Recupero gli eventi associati
+    static getReservations(title) {
+        const events = this.readDb();
+
+        const eventsTitle = events.reduce((arr, event) => {
+            event.title === title && arr.push(event);
+            return arr;
+        }, []);
+
+        const filePath = path.join(__dirname, '../database/reservations.json');
+        const fileData = fs.readFileSync(filePath, 'utf-8');
+        const reservations = JSON.parse(fileData);
+
+        const eventId = eventsTitle.map(e => e.id);
+        const reservationsEvents = reservations.reduce((arr, res) => {
+            eventId.includes(res.eventId) && arr.push(res);
+            return arr;
+        }, []);
+
+        return reservationsEvents;
+    }
 }
 
 module.exports = Event;
