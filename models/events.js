@@ -40,7 +40,9 @@ class Event {
     static getEventId(id) {
         const events = this.readDb();
         const eventId = events.find(event => event.id === id);
+
         if (!eventId) throw new Error(`L\'evento con id: ${id} non esiste`);
+
         return eventId;
     }
 
