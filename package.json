@@ -1,0 +1,17 @@
+{
+  "name": "express-gestore-eventi",
+  "version": "1.0.0",
+  "description": "Esercizio di oggi: express-gestore-eventi\r # Esercizio\r Il nostro obiettivo sarà quello di creare le api per un applicazione che gestirà degli eventi con le relative prenotazioni. Proseguiamo per milestone in modo da avere tutto sotto controllo.\r ## Milestone 1\r Creiamo le seguenti rotte con relativo controller e router senza implementare le funzioni del controller.\r - [GET] events/ (index)\r - [POST] events/ (store)\r - [PUT] events/:event (update)\r ## Milestone 2\r Creiamo il model `models/event.js` e prevediamo le seguenti proprietà:\r - id\r - title\r - description\r - date\r - maxSeats (numero massimo di posti)\r Tramite dei metodi statici, facciamo in modo di poter leggere e salvare i dati su un file json dedicato.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.2"
+  }
+}
