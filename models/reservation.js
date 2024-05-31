@@ -12,4 +12,10 @@ class Reservation {
         const id = crypto.randomUUID();
         return id;
     }
+
+    // Setter del firstName
+    set firstName(firstName) {
+        if (!firstName || firstName.length < 1 || typeof firstName !== 'string') throw new Error('Nome non inserito correttamente');
+        this.firstName = firstName;
+    }
 }
