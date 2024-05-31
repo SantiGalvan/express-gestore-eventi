@@ -2,9 +2,10 @@ const path = require("path");
 const fs = require("fs");
 
 class Event {
+    #id
 
     constructor(title, description, date, maxSeats) {
-        this.id = this.generateId();
+        this.#id = this.generateId();
         this.title = title;
         this.description = description;
         this.date = date;
@@ -80,6 +81,30 @@ class Event {
         }, []);
 
         return reservationsEvents;
+    }
+
+    // Setter del title
+    set title(title) {
+        if (!title || title.length < 1 || typeof title !== 'string') throw new Error('Il titolo passato non può essere salvato');
+        this.title = title;
+    }
+
+    // Setter della description
+    set description(description) {
+        if (!description || description.length < 10 || typeof description !== 'string') throw new Error('La descrizione non è stata accettata');
+        this.description = description;
+    }
+
+    // Setter della date
+    set date(date) {
+        if (!date || description.length < 8) throw new Error('Data non valida');
+        this.date = date;
+    }
+
+    // Setter della maxSeats
+    set maxSeats(maxSeats) {
+        if (!maxSeats || maxSeats < 5 || typeof maxSeats === 'number') throw new Error('Numero di posti non valido');
+        this.maxSeats = maxSeats;
     }
 }
 
