@@ -18,4 +18,10 @@ class Reservation {
         if (!firstName || firstName.length < 1 || typeof firstName !== 'string') throw new Error('Nome non inserito correttamente');
         this.firstName = firstName;
     }
+
+    // Setter del lastName
+    set lastName(lastName) {
+        if (!lastName || lastName.length < 1 || typeof lastName !== 'string') throw new Error('Cognome non inserito correttamente');
+        this.lastName = lastName;
+    }
 }
