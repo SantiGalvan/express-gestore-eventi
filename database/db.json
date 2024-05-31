@@ -1,1 +1,23 @@
-[]
+[
+    {
+        "id": 1,
+        "title": "Concerto di Musica Classica",
+        "description": "Un'esperienza indimenticabile con i migliori compositori classici.",
+        "date": "2024-06-10",
+        "maxSeats": 150
+    },
+    {
+        "id": 2,
+        "title": "Fiera del Libro",
+        "description": "Un evento imperdibile per tutti gli amanti della lettura e della cultura.",
+        "date": "2024-07-15",
+        "maxSeats": 300
+    },
+    {
+        "id": 3,
+        "title": "Finale di Champions League",
+        "description": "Finale di Champion League tra Real Madrid e Borussia Dortmund",
+        "date": "2024-06-01",
+        "maxSeats": 200
+    }
+]
