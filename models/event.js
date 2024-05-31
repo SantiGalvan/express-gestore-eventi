@@ -94,6 +94,12 @@ class Event {
         if (!description || description.length < 10 || typeof description !== 'string') throw new Error('La descrizione non è stata accettata');
         this.description = description;
     }
+
+    // Setter della date
+    set date(date) {
+        if (!date || description.length < 8) throw new Error('Data non valida');
+        this.date = date;
+    }
 }
 
 module.exports = Event;
