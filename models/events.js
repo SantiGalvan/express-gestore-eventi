@@ -1,3 +1,6 @@
+const path = require("path");
+const fs = require("fs");
+
 class Event {
 
     constructor(title, description, date, maxSeats) {
@@ -11,5 +14,11 @@ class Event {
     generateId() {
         const id = crypto.randomUUID();
         return id;
+    }
+
+    static readDb() {
+        const filePath = path.join(__dirname, '../database/db.json');
+        const fileData = fs.readFileSync(filePath, 'utf-8');
+        return fileData;
     }
 }
