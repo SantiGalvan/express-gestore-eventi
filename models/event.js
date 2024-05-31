@@ -88,6 +88,12 @@ class Event {
         if (!title || title.length < 1 || typeof title !== 'string') throw new Error('Il titolo passato non può essere salvato');
         this.title = title;
     }
+
+    // Setter della description
+    set description(description) {
+        if (!description || description.length < 10 || typeof description !== 'string') throw new Error('La descrizione non è stata accettata');
+        this.description = description;
+    }
 }
 
 module.exports = Event;
